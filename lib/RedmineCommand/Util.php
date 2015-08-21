@@ -109,7 +109,7 @@ class Util {
 	public static function convertIssueToAttachment($redmine_issues_url, $issue_id, $issue) {
 		$attachment = new SlackResultAttachment ();
 		$attachment->setTitle ( "#" . $issue_id . " " . $issue ['issue'] ['subject'] );
-		$attTitle = "[<" . $redmine_issues_url . $issue_id . "|" . $issue ['issue'] ['tracker'] ['name'] . " #" . $issue_id . ">]";
+		$attTitle = "[<" . $redmine_issues_url . $issue_id . "|" . $issue ['issue'] ['tracker'] ['name'] . " #" . $issue_id . ">] " . $issue['issue']['subject'];
 		$attachment->setPretext ( $attTitle );
 		$attachment->setTitle ( $issue ['issue'] ['subject'] );
 		$attachment->setText ( $issue ["issue"] ["description"] );
@@ -131,11 +131,11 @@ class Util {
 		$fields [] = self::createField ( "Status", $issue ["issue"] ["status"] ["name"] );
 		$fields [] = self::createField ( "Priority", $issue ["issue"] ["priority"] ["name"] );
 		$fields [] = self::createField ( "Assigned To", $assigned_to );
-		$fields [] = self::createField ( "Author", $issue ["issue"] ["author"] ["name"] );
+//		$fields [] = self::createField ( "Author", $issue ["issue"] ["author"] ["name"] );
 		$fields [] = self::createField ( "Start Date", $issue ["issue"] ["start_date"] );
-		$fields [] = self::createField ( "Estimated Hours", $estimated_hours );
-		$fields [] = self::createField ( "Done Ratio", $issue ["issue"] ["done_ratio"] . "%" );
-		$fields [] = self::createField ( "Spent Hours", $issue ["issue"] ["spent_hours"] );
+//		$fields [] = self::createField ( "Estimated Hours", $estimated_hours );
+//		$fields [] = self::createField ( "Done Ratio", $issue ["issue"] ["done_ratio"] . "%" );
+//		$fields [] = self::createField ( "Spent Hours", $issue ["issue"] ["spent_hours"] );
 		$fields [] = self::createField ( "Created On", $issue ["issue"] ["created_on"] );
 		$fields [] = self::createField ( "Updated On", $issue ["issue"] ["updated_on"] );
 		$attachment->setFieldsArray ( $fields );

@@ -35,12 +35,12 @@ class CmdShow extends AbstractCommand {
 		
 		$client = new Client ( $this->config->redmine_url, $this->config->redmine_api_key );
 		
-		$resultText = "[requested by " . $this->post ["user_name"] . "]";
-		if (empty ( $this->cmd )) {
-			$resultText .= " Issue number required!";
-		} else {
-			$resultText .= " Issue Details: ";
-		}
+//		$resultText = "[requested by " . $this->post ["user_name"] . "]";
+//		if (empty ( $this->cmd )) {
+//			$resultText .= " Issue number required!";
+//		} else {
+//			$resultText .= " Issue Details: ";
+//		}
 		
 		// Fetching issues and adding them as slack attachments
 		$attachments = array ();
