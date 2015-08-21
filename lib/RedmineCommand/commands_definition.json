@@ -2,7 +2,7 @@
 	"commands": [
 		{
 			"trigger": "",
-			"class": "RedmineCommand\\CmdShow"
+			"class": "RedmineCommand\\CmdShow",
 			"help_title": "default",
 			"help_text": "Default to show command for '/command 1234'"
 		},
