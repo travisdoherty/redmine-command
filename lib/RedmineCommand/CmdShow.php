@@ -56,7 +56,7 @@ class CmdShow extends AbstractCommand {
 						$attachmentUnknown->setTitle ( "Unknown Issues:" );
 						$attachmentUnknown->setText ( "" );
 					}
-					$log->debug ( "CmdShow: #$issueId issue unknown!" );
+					$log->debug ( "CmdShow: #$issueId issue unknown! (Redmine Client result: '$issue')" );
 					$attachmentUnknown->setText ( $attachmentUnknown->getText () . " $issueId" );
 				}
 			} else {

@@ -42,6 +42,12 @@ class Util {
 	 * @return string
 	 */
 	public static function getChannelName($config, $channelId) {
+
+		// if this config option is not set to true (default: true) just return the channel id
+		if (!($config->api_resolve_channels)) {
+			return $channelId;
+		}
+
 		// TODO move constants to global configuration file
 		$log = new Logger ( $config->log_dir, $config->log_level );
 		$channel = '';

@@ -45,6 +45,12 @@ class CommandFactory {
 			$log->debug ( "CommandFactory: text received: " . $post ['text'] );
 			// parsing inputs by space
 			$input = preg_split ( "/[\s]+/", $post ['text'] );
+
+			// if only a single param passed then run default command
+			if (count($input) === 1) {
+				array_unshift($input, '');
+			}
+
 			// the first word represents the command
 			if (in_array ( $input [0], array_keys ( self::$classes ) )) {
 				$class = self::$classes [$input [0]];

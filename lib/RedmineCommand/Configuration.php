@@ -11,6 +11,14 @@ class Configuration {
   public $token;
   public $slack_webhook_url;
   public $api_channels_info_url;
+
+  /**
+   * Lookup channel name from channel id using Slack API, if set to
+   * false then the channel id will be sent back to Slack unresolved
+   * @var bool
+   */
+  public $api_resolve_channels;
+
   public $api_groups_list_url;
   public $slack_api_token;
   public $redmine_url;
@@ -25,6 +33,7 @@ class Configuration {
     $this->token = null;
     $this->slack_webhook_url = null;
     $this->api_channels_info_url = URL_CHANNELS_INFO;
+    $this->api_resolve_channels = true;
     $this->api_groups_list_url = URL_GROUPS_LIST;
     $this->slack_api_token = null;
     $this->redmine_url = null;
